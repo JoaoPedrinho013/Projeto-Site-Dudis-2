@@ -87,3 +87,33 @@
 .slide-controls-button.active {
     color: cornflowerblue;
 }
+@media screen and (max-width: 768px) {
+    .slide-description {
+        padding: 10px;
+    }
+    .slide-description h3 {
+        font-size: 24px;
+        top: 0;
+    }
+    .slide-description p {
+        display: none;
+    }
+
+    .slide-nav-button {
+        font-size: 28px; 
+        margin-top: -20px;
+    }
+    .slide-nav-previous {
+        left: 1em;
+    }
+    .slide-nav-next {
+        right: 1em;
+    }
+
+    .slide-controls {
+        margin: 15px auto 0;
+    }
+    .slide-controls-button {
+        font-size: 14px;
+    }
+}

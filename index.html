@@ -15,6 +15,7 @@
     <script src="assets/scripts/script.js" defer></script>
     <!-- JavaScript para carregar o header e o footer -->
     <script src="Header&Footer.js" defer></script>
+    <script src="assets/scripts/slide.js" defer></script>
 </head>
 
 <body>
@@ -23,11 +24,13 @@
 
     <main>
         <div class="wrapper">
-            <div class="slide-wrapper">
-                <button class="slide-nav-button slide-nav-previous fas fa-chevron-left"></button>
-                <button class="slide-nav-button slide-nav-next fas fa-chevron-right"></button>
-                <div class="slide-list">
-                    <div class="slide-item">
+            <div class="slide-wrapper" data-slide="wrapper">
+                <button class="slide-nav-button slide-nav-previous fas fa-chevron-left"
+                    data-slide="nav-previous-button"></button>
+                <button class="slide-nav-button slide-nav-next fas fa-chevron-right"
+                    data-slide="nav-next-button"></button>
+                <div class="slide-list" data-slide="list">
+                    <div class="slide-item" data-slide="item" data-index="0">
                         <div class="slide-content">
                             <img class="slide-image" src="assets/imagens/slide1.webp" alt="Imagem 1">
                             <div class="slide-description">
@@ -36,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slide-item">
+                    <div class="slide-item" data-slide="item" data-index="1">
                         <div class="slide-content">
                             <img class="slide-image" src="assets/imagens/slide2.webp" alt="Imagem 2">
                             <div class="slide-description">
@@ -45,7 +48,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slide-item">
+                    <div class="slide-item" data-slide="item" data-index="2">
                         <div class="slide-content">
                             <img class="slide-image" src="assets/imagens/slide3.webp" alt="Imagem 3">
                             <div class="slide-description">
@@ -55,10 +58,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide-controls">
-                    <button class="slide-controls-button fas fa-circle"></button>
-                    <button class="slide-controls-button fas fa-circle"></button>
-                    <button class="slide-controls-button fas fa-circle"></button>
+                <div class="slide-controls" data-slide="controls-wrapper">
+                    <button class="slide-controls-button fas fa-circle" data-slide="control-button"></button>
+                    <button class="slide-controls-button fas fa-circle" data-slide="control-button"></button>
+                    <button class="slide-controls-button fas fa-circle" data-slide="control-button"></button>
                 </div>
             </div>
         </div>

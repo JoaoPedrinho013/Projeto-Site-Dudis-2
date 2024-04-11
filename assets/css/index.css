@@ -1,0 +1,88 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.barraSuperior {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5em;
+}
+
+.numberBox .number {
+    text-decoration: none;
+    color: whitesmoke;
+    font: 1em 'Roboto', sans-serif;
+    padding-left: 1em;
+}
+
+.socialBox a {
+    text-decoration: none;
+    color: whitesmoke;
+    font: 1em 'Roboto', sans-serif;
+    padding-left: 1em;
+}
+
+hr {
+    border-color: rgb(70, 133, 250);
+}
+
+.navBox {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+
+.navBox .logo {
+    margin-right: auto;
+}
+
+.navBox .links {
+    display: flex;
+}
+
+.navBox .pagina {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    padding: 1em;
+    text-decoration: none;
+    color: black;
+    margin-left: 1em;
+}
+
+main {
+    flex: 1;
+    
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+.rodapeBox {
+    background: linear-gradient(to top, black, rgb(99, 97, 97));
+    color: whitesmoke;
+    margin-top: auto;
+}
+
+.direitos {
+    color: rgba(245, 245, 245, 0.5);
+    text-align: center;
+    font-style: italic;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}

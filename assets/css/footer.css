@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+    --color-neutral-0: rgb(33, 45, 62);
+    --color-neutral-10: rgb(44, 59, 80);
+    --color-neutral-30: #a8a29e;
+    --color-neutral-40: #f5f5f5;
+
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+main {
+    height: 80vh;
+}
+
+footer {
+    width: 100%;
+    color: var(--color-neutral-40);
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+#footer_content {
+    background-color: var(--color-neutral-10);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 3.5rem;
+    gap: 1px;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+
+}
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 25%;
+    transition: all 0.4s;
+
+}
+
+#facebook {
+    background-color: #4267b3;
+    font-size: 1.50rem;
+}
+
+
+#footer_about {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-right: 10px;
+    width: 400px; /* Defina a largura desejada */
+
+}
+
+#footer_about p {
+    color: var(--color-neutral-40);
+    font-size: 14px;
+}
+
+
+#footer_contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#footer_contact p {
+    color: var(--color-neutral-40);
+}
+
+#footer_copyright {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-neutral-0);
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+.mapBox{
+    position: relative;
+    width: 450px;
+    height: 300px;
+    border-radius: 5%;
+    background: #fff;
+}
+
+.mapBox iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 4%;
+}
+
+@media screen and (max-width: 1540px) {
+    .mapBox {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+
+    }
+
+    #footer_contact {
+        margin-top: 1.5rem;
+    }
+    #footer_about{
+        margin-top: 1.5rem;
+    }
+}
+@media screen and (max-width: 450px) {
+    #footer_about{
+        display: none;
+    }
+}
+
+.direitos {
+    text-align: center;
+    font-style: italic;
+    padding: 10px;
+}
+
+
+/*
+.rodapeBox {
+    margin-top: auto;
+}
+
+.direitos {
+    background: linear-gradient(to top, black, rgb(99, 97, 97));
+    color: rgba(245, 245, 245, 0.5);
+    text-align: center;
+    font-style: italic;
+    padding: 10px;
+}
+
+.information {
+    background-color: rgb(67, 67, 107);
+    color: white;
+    height: 15em;
+    display: flex;
+    border: solid 20px rgb(67, 67, 107);
+    justify-content: center;
+}
+
+.about-rotape {
+    display: flex;
+    border: solid 20px rgb(67, 67, 107);
+}
+
+.contact-rota {
+    display: flex;
+    border: solid 20px rgb(67, 67, 107);
+}
+*/

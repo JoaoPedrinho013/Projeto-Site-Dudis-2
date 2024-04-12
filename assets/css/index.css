@@ -14,7 +14,7 @@ body {
 }
 
 .barraSuperior {
-    background-color: cornflowerblue;
+    background-color: #3a60ab;
     display: flex;
     justify-content: space-around;
     padding: 0.5em;
@@ -72,17 +72,3 @@ body, html {
     padding: 0;
   }
   
-
-.rodapeBox {
-    background: linear-gradient(to top, black, rgb(99, 97, 97));
-    color: whitesmoke;
-    margin-top: auto;
-}
-
-.direitos {
-    color: rgba(245, 245, 245, 0.5);
-    text-align: center;
-    font-style: italic;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0);
-}

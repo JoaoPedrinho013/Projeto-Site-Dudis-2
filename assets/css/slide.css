@@ -20,6 +20,7 @@
 }
 .slide-list {
     display: flex;
+    transition: transform .5s;
 }
 
 .slide-item {

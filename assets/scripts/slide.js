@@ -6,36 +6,129 @@ const navPreviousButton = document.querySelector('[data-slide="nav-previous-butt
 const navNextButton = document.querySelector('[data-slide="nav-next-button"]')
 const controlsWrapper = document.querySelector('[data-slide="controls-wrapper"]')
 const slideItems = document.querySelectorAll('[data-slide="item"]')
-const controlButtons = document.querySelectorAll('[data-slide="control-button"]')
-let startingPoint = 0
-let savedPosition = 0
-let currentPoint = 0
-let movement = 0
+let controlButtons
 
+const state = {
+    startingPoint: 0,
+    savedPosition: 0,
+    currentPoint: 0,
+    movement: 0,
+    currentSlideIndex: 0
+}   
 
-function onMouseDown(event) {
+function translateSlide({position}) {
+    state.savedPosition = position
+    slideList.style.transform = `translateX(${position}px)`
+}
+
+function getCenterPosition({index}) {
+    const slideItem = slideItems[index]
+    const slideWidth = slideItem.clientWidth
+    const windowWidth = document.body.clientWidth
+    const margin = (windowWidth - slideWidth) / 2
+    const position =  margin - (index * slideWidth)
+    return position
+}
+
+function setVisibleSlide({index}) {
+    const position = getCenterPosition({index})
+    state.currentSlideIndex = index
+    slideList.style.transition = 'transform .5s'
+    activeControlButton({index})
+    translateSlide({position})
+}
+
+function nextSlide () {
+    setVisibleSlide({index: state.currentSlideIndex + 1})
+}
+
+function previousSlide() {
+    setVisibleSlide({index: state.currentSlideIndex - 1})
+}
+
+function createControlButtons() {
+    slideItems.forEach(function(){
+        const controlButton = document.createElement('button')
+        controlButton.classList.add('slide-controls-button')
+        controlButton.classList.add('fas')
+        controlButton.classList.add('fa-circle')
+        controlButton.dataset.slide = 'control-button'
+        controlsWrapper.append(controlButton)
+    })
+}
+
+function activeControlButton({index}) {
+    const controlButton =controlButtons[index]
+    controlButtons.forEach(function(controlButtonItem){
+        controlButtonItem.classList.remove('active')
+    })
+    controlButton.classList.add('active')
+}
+
+function onMouseDown(event, index) {
     const slideItem = event.currentTarget
-    startingPoint = event.clientX
-    currentPoint = startingPoint - savedPosition
+    state.startingPoint = event.clientX
+    state.currentPoint = state.startingPoint - state.savedPosition
+    state.currentSlideIndex = index
+    slideList.style.transition = 'none'
     slideItem.addEventListener('mousemove', onMouseMove)
+    console.log(state.currentSlideIndex)
 }
 function onMouseMove(event) {
-    movement = event.clientX - startingPoint
-    const position = event.clientX - currentPoint
-    slideList.style.transform = 'translateX(' + position + 'px)'
-    savedPosition = position
+    state.movement = event.clientX - state.startingPoint
+    const position = event.clientX - state.currentPoint
+    translateSlide({position})
 }
 function onMouseUp(event) {
     const slideItem = event.currentTarget
+    const slideWidth = slideItem.clientWidth
+    if(state.movement < -150) {
+        nextSlide()
+    } else if ( state.movement > 150) {
+        previousSlide()
+    } else {
+        setVisibleSlide({index: state.currentSlideIndex})
+
+    }
+
     slideItem.removeEventListener('mousemove', onMouseMove)
 }
 
+function onControlButtonClick(index) {
+    setVisibleSlide({index})
+}
 
-slideItems.forEach(function (slideItem, index) {
-    slideItem.addEventListener('dragstart', function (event) {
-        event.preventDefault()
+
+function setListeners() {
+    controlButtons = document.querySelectorAll('[data-slide="control-button"]')
+
+    controlButtons.forEach(function(controlButton, index) {
+        controlButton.addEventListener('click', function(event) {
+            onControlButtonClick(index)
+        })
     })
-    slideItem.addEventListener('mousedown', onMouseDown)
-    slideItem.addEventListener('mouseup', onMouseUp)
 
-})
+    slideItems.forEach(function (slideItem, index) {
+
+        slideItem.addEventListener('dragstart', function (event) {
+            event.preventDefault()
+        })
+    
+        slideItem.addEventListener('mousedown', function (event) {
+            onMouseDown(event, index)
+        })
+    
+        slideItem.addEventListener('mouseup', onMouseUp)
+    
+    })
+    
+    
+    navNextButton.addEventListener('click', nextSlide)
+    navPreviousButton.addEventListener('click', previousSlide)
+}
+function initSlider() {
+    createControlButtons()
+    setListeners()
+    setVisibleSlide({index: 0})
+}
+initSlider()

@@ -1,0 +1,22 @@
+.map {
+    display: flex; 
+    justify-content: center;
+    
+    
+}
+
+.localizaçao {
+    display: flex;
+    justify-content: left;
+   
+}
+
+.contato {
+    display: flex;
+    justify-content: center;
+}
+
+.horarios-de-funcionamento {
+    display: flex;
+    justify-content: right;
+}

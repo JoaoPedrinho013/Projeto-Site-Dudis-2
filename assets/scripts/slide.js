@@ -5,15 +5,18 @@ const slideList = document.querySelector('[data-slide="list"]')
 const navPreviousButton = document.querySelector('[data-slide="nav-previous-button"]')
 const navNextButton = document.querySelector('[data-slide="nav-next-button"]')
 const controlsWrapper = document.querySelector('[data-slide="controls-wrapper"]')
-const slideItems = document.querySelectorAll('[data-slide="item"]')
+let slideItems = document.querySelectorAll('[data-slide="item"]')
 let controlButtons
+let slideInterval
 
 const state = {
     startingPoint: 0,
     savedPosition: 0,
     currentPoint: 0,
     movement: 0,
-    currentSlideIndex: 0
+    currentSlideIndex: 0,
+    autoPlay: true,
+    timeInterval: 5000
 }   
 
 function translateSlide({position}) {
@@ -30,20 +33,23 @@ function getCenterPosition({index}) {
     return position
 }
 
-function setVisibleSlide({index}) {
-    const position = getCenterPosition({index})
+function setVisibleSlide({index, animate}) {
+   if(index === 0 || index === slideItems.length - 1) {
+        index = state.currentSlideIndex
+    }
+    const position = getCenterPosition({ index })
     state.currentSlideIndex = index
-    slideList.style.transition = 'transform .5s'
+    slideList.style.transition = animate === true ? 'transform .5s' : 'none'
     activeControlButton({index})
-    translateSlide({position})
+    translateSlide({position: position})
 }
 
 function nextSlide () {
-    setVisibleSlide({index: state.currentSlideIndex + 1})
+    setVisibleSlide({index: state.currentSlideIndex + 1, animate : true})
 }
 
 function previousSlide() {
-    setVisibleSlide({index: state.currentSlideIndex - 1})
+    setVisibleSlide({index: state.currentSlideIndex - 1, animate : true})
 }
 
 function createControlButtons() {
@@ -58,11 +64,38 @@ function createControlButtons() {
 }
 
 function activeControlButton({index}) {
-    const controlButton =controlButtons[index]
+    const slideItem = slideItems[index]
+    const dataIndex = Number(slideItem.dataset.index)
+    const controlButton =controlButtons[dataIndex]
     controlButtons.forEach(function(controlButtonItem){
         controlButtonItem.classList.remove('active')
     })
-    controlButton.classList.add('active')
+    if(controlButton) controlButton.classList.add('active')
+}
+
+function createSlideClones() {
+    const firstSlide = slideItems[0].cloneNode(true)
+    firstSlide.classList.add('slide-cloned')
+    firstSlide.dataset.index = slideItems.length
+
+    const secondSlide = slideItems[1].cloneNode(true)
+    secondSlide.classList.add('slide-cloned')
+    secondSlide.dataset.index = slideItems.length + 1
+
+    const lastSlide = slideItems[slideItems.length - 1].cloneNode(true)
+    lastSlide.classList.add('slide-cloned')
+    lastSlide.dataset.index = -1
+
+    const penultimateSlide = slideItems[1].cloneNode(true)
+    penultimateSlide.classList.add('slide-cloned')
+    penultimateSlide.dataset.index = -2
+
+    slideList.append(firstSlide)
+    slideList.append(secondSlide)
+    slideList.prepend(lastSlide)
+    slideList.prepend(penultimateSlide)
+
+    slideItems = document.querySelectorAll('[data-slide="item"]')
 }
 
 function onMouseDown(event, index) {
@@ -72,7 +105,7 @@ function onMouseDown(event, index) {
     state.currentSlideIndex = index
     slideList.style.transition = 'none'
     slideItem.addEventListener('mousemove', onMouseMove)
-    console.log(state.currentSlideIndex)
+    
 }
 function onMouseMove(event) {
     state.movement = event.clientX - state.startingPoint
@@ -80,24 +113,60 @@ function onMouseMove(event) {
     translateSlide({position})
 }
 function onMouseUp(event) {
+    const pointsToMove = event.type.includes('touch') ? 50 : 150
     const slideItem = event.currentTarget
-    const slideWidth = slideItem.clientWidth
-    if(state.movement < -150) {
+    if(state.movement < -pointsToMove) {
         nextSlide()
-    } else if ( state.movement > 150) {
+    } else if ( state.movement > pointsToMove) {
         previousSlide()
     } else {
-        setVisibleSlide({index: state.currentSlideIndex})
+        setVisibleSlide({index: state.currentSlideIndex, animate : true})
 
     }
 
     slideItem.removeEventListener('mousemove', onMouseMove)
 }
 
-function onControlButtonClick(index) {
-    setVisibleSlide({index})
+function onTouchStart(event, index) {
+    event.clientX = event.touches[0].clientX
+    onMouseDown(event, index)
+    const slideItem = event.currentTarget
+    slideItem.addEventListener('touchmove', onTouchMove)
+
+}
+function onTouchMove(event) {
+    event.clientX = event.touches[0].clientX
+    onMouseMove(event)
 }
 
+function onTouchEnd(event) {
+    onMouseUp(event)
+    const slideItem = event.currentTarget
+    slideItem.removeEventListener('touchmove', onTouchMove)
+
+}
+
+function onControlButtonClick(index) {
+    setVisibleSlide({index: index + 2, animate : true})
+}
+
+function onSlideListTransitionEnd() {
+   if(state.currentSlideIndex === slideItems.length - 2) {
+        setVisibleSlide({ index: 2, animate : false})
+    }
+    if(state.currentSlideIndex === 1) {
+        setVisibleSlide({ index: slideItems.length - 3, animate : false})
+    } 
+}
+
+function setAutoPlay() {
+    if(state.autoPlay){
+        slideInterval = setInterval(function(){
+            setVisibleSlide({index: state.currentSlideIndex +1, animate: true})
+        },state.timeInterval)
+    }
+    
+}
 
 function setListeners() {
     controlButtons = document.querySelectorAll('[data-slide="control-button"]')
@@ -119,16 +188,46 @@ function setListeners() {
         })
     
         slideItem.addEventListener('mouseup', onMouseUp)
+        //touch
+        slideItem.addEventListener('touchstart', function (event) {
+            onTouchStart(event, index)
+        })
+    
+        slideItem.addEventListener('touchend', onTouchEnd)
     
     })
     
     
     navNextButton.addEventListener('click', nextSlide)
     navPreviousButton.addEventListener('click', previousSlide)
+    slideList.addEventListener('transitionend', onSlideListTransitionEnd)
+    slideWrapper.addEventListener('mouseenter', function() {
+        clearInterval(slideInterval)
+        slideWrapper.addEventListener('mouseleave', setAutoPlay)
+    })
+    let resizeTimeout
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout)
+        resizeTimeout = setTimeout(function() {
+            setVisibleSlide({index: state.currentSlideIndex, animate: true})
+
+        },1000)
+    })
 }
-function initSlider() {
+
+
+
+function initSlider({startAtIndex=0, autoPlay=true, timeInterval=4000}) {
+    state.autoPlay = autoPlay
+    state.timeInterval = timeInterval
     createControlButtons()
+    createSlideClones()
     setListeners()
-    setVisibleSlide({index: 0})
+    setVisibleSlide({index: startAtIndex + 2, animate : true})
+    setAutoPlay()
 }
-initSlider()
+
+initSlider({
+    autoPlay: true
+})
+

@@ -38,7 +38,7 @@ body, html {
 
 .centered-text {
     background-color: rgb(226, 226, 226);
-    font-size: 24px;
+    font-size: 36px;
     text-align: center;
     z-index: 1;
 }
@@ -77,37 +77,44 @@ li{
 
 
 .card-container {
-    
     display: flex;
     flex-direction: row; /* Mantido como linha */
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+
     gap: 16px;
     width: 1160px;
-    
+    margin-bottom: 20px;
 }
 
 .resumo {
     width: 1160px;
     height: 120px;
-    margin: 8px;
+    margin: 2px;
+    margin-top: 12px;
+}
+
+.resumo h3 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.resumo p {
+    margin-top: 16px;
+    color: rgba(0, 0, 0, 0.900);
 }
 
 .card {
     background-color: #fff;
-    width: 360px;
-    height: 280px;
+    width: 322px;
+    height: 360;
     border-radius: 12px;
     box-shadow: 4px 4px 12px #aaaa;
-    margin: 8px;
+    margin: 2px;
 }
 
 .card img {
     width: 100%;
-    height: 210px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    height: 322px;
 }
 
 .card div {
@@ -121,7 +128,7 @@ li{
 
 .card h3 {
     font-size: 20px;
-    color: black;
+    color: rgba(0, 0, 0, 0.700);
     display: flex;
     justify-content: center;
     align-items: center;

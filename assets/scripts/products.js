@@ -13,3 +13,5 @@ function adjustLines() {
 
 // Chame a função para ajustar as linhas quando a página é carregada inicialmente
 adjustLines();
+
+

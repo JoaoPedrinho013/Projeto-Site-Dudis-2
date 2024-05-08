@@ -73,6 +73,8 @@ ul h3{
 }
 li{
     margin: 20px; 
+    cursor: pointer;
+
 }
 
 
@@ -104,11 +106,9 @@ li{
 }
 
 .card {
-    background-color: #fff;
+
     width: 322px;
     height: 360;
-    border-radius: 12px;
-    box-shadow: 4px 4px 12px #aaaa;
     margin: 2px;
 }
 
@@ -128,9 +128,10 @@ li{
 
 .card h3 {
     font-size: 20px;
-    color: rgba(0, 0, 0, 0.700);
+    color: rgba(0, 0, 0, 0.500);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
 }
+

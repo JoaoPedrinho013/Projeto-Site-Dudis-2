@@ -142,16 +142,3 @@ li {
     align-items: center;
     margin: 10px;
 }
-
-.containerProductInf {
-    background-color: rgb(86, 86, 86);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: ;
-}
-
-.informations {
-
-}

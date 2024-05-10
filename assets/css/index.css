@@ -13,59 +13,10 @@ body {
     min-height: 100vh;
 }
 
-.barraSuperior {
-    background-color: #3a60ab;
-    display: flex;
-    justify-content: space-around;
-    padding: 0.5em;
-}
-
-.numberBox .number {
-    text-decoration: none;
-    color: whitesmoke;
-    font: 1em 'Roboto', sans-serif;
-    padding-left: 1em;
-}
-
-.socialBox a {
-    text-decoration: none;
-    color: whitesmoke;
-    font: 1em 'Roboto', sans-serif;
-    padding-left: 1em;
-}
-
-hr {
-    border-color: rgb(70, 133, 250);
-}
-
-.navBox {
-    display: flex;
-    align-items: center;
-    padding: 1em;
-}
-
-.navBox .logo {
-    margin-right: auto;
-}
-
-.navBox .links {
-    display: flex;
-}
-
-.navBox .pagina {
-    font-size: 1em;
-    font-family: 'Roboto', sans-serif;
-    padding: 1em;
-    text-decoration: none;
-    color: black;
-    margin-left: 1em;
-}
-
 main {
     flex: 1;
     
 }
-
 
 body, html {
     margin: 0;

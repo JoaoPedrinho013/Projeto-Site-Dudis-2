@@ -1,4 +1,5 @@
 .containerProductInf {
+    text-decoration: none;
     background-color: rgb(86, 86, 86);
     display: flex;
     flex-direction: column;
@@ -6,8 +7,8 @@
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
+    
 }
-
 
 .containerProductInf img {
     width: 980px;
@@ -18,7 +19,7 @@
     width: 980px;
     display: flex;
     justify-content: space-between;
-    margin: 25px 0;
+    margin: 70px 0;
 }
 
 .informations {

@@ -44,22 +44,6 @@ html {
     z-index: 1;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    /* Alterado para linha */
-    justify-content: center;
-    /* Centraliza os elementos horizontalmente */
-    align-items: flex-start;
-    /* Alinha os itens no topo */
-}
-
-
-.lista-container {
-    margin-right: 20px;
-    /* Adiciona margem para separar do card-container */
-    list-style: none;
-}
 
 .linha {
     width: 100%;
@@ -113,6 +97,7 @@ li {
     color: rgba(0, 0, 0, 0.900);
 }
 
+/*
 .card {
 
     width: 322px;

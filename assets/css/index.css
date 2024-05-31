@@ -28,82 +28,15 @@ html {
 
 
 .parallax {
-    /* The image used */
-    background-image: url("../../assets/imagens/slide1.webp");
-
-    /* Set a specific height */
-    min-height: 390px;
-    margin: 30px 80px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
+  
+    background-image: url("../../assets/imagens/imagensProdutos/sheepHandling.webp");
     background-repeat: no-repeat;
-    background-size: cover;
-}
-@media only screen and (max-device-width: 1366px) {
-    .parallax {
-      background-attachment: scroll;
-    }
-  }
-.parallax2 {
-    /* The image used */
-    background-image: url("../../assets/imagens/slide2.webp");
-
-    /* Set a specific height */
-    min-height: 390px;
-    margin: 30px 80px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-@media only screen and (max-device-width: 1366px) {
-    .parallax2 {
-      background-attachment: scroll;
-    }
+    background-color: black;
+    width: 100%;
+    height: 386px;
   }
-.parallax3 {
-    /* The image used */
-    background-image: url("../../assets/imagens/slide3.webp");
-
-    /* Set a specific height */
-    min-height: 390px;
-    margin: 30px 80px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-@media only screen and (max-device-width: 1366px) {
-    .parallax3 {
-      background-attachment: scroll;
-    }
-  }
-.parallax4 {
-    /* The image used */
-    background-image: url("../../assets/imagens/slide1.webp");
-
-    /* Set a specific height */
-    min-height: 390px;
-    margin: 30px 80px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-@media only screen and (max-device-width: 1366px) {
-    .parallax3 {
-      background-attachment: scroll;
-    }
-  }
-
+ 
 .custom-link {
     text-decoration: none;
     font: 0.9em 'Roboto', sans-serif;

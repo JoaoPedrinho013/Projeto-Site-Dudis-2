@@ -1,0 +1,57 @@
+.parallax2 {
+    /* The image used */
+    background-image: url("../../assets/imagens/imagensProdutos/sheepFeeding.webp");
+
+    /* Set a specific height */
+    min-height: 390px;
+    margin: 30px 80px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+}
+@media only screen and (max-device-width: 1366px) {
+    .parallax2 {
+      background-attachment: scroll;
+    }
+  }
+.parallax3 {
+    /* The image used */
+    background-image: url("../../assets/imagens/imagensProdutos/sheepHurdles.webp");
+
+    /* Set a specific height */
+    min-height: 390px;
+    margin: 30px 80px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+}
+@media only screen and (max-device-width: 1366px) {
+    .parallax3 {
+      background-attachment: scroll;
+    }
+  }
+.parallax4 {
+    /* The image used */
+    background-image: url("../../assets/imagens/imagensProdutos/fieldGates.webp");
+
+    /* Set a specific height */
+    min-height: 390px;
+    margin: 30px 80px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+}
+@media only screen and (max-device-width: 1366px) {
+    .parallax3 {
+      background-attachment: scroll;
+    }
+  }

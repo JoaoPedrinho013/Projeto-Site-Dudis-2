@@ -125,3 +125,7 @@ li {
     align-items: center;
     margin: 10px;
 }
+.custom-link {
+    text-decoration: none;
+    color: black;
+}

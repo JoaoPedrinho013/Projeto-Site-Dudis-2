@@ -5,6 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products | Buffalo steel Products</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="stylesheet" href="../../../assets/css/index.css">
     <link rel="stylesheet" href="../../../assets/css/header.css">
@@ -15,95 +28,75 @@
 <body>
     <header></header>
 
-    <main>
-        <div class="titulo ">
-            <div class="line left-line"></div>
-            <h1 class="centered-text">Products</h1>
-            <div class="line right-line"></div>
+
+    <div class="row">
+        <div class="col ml-5 mt-2">
+            <hr class="bg-dark">
         </div>
+        <div class="col-auto">
+            <h1>Products</h1>
+        </div>
+        <div class="col mr-5 mt-2">
+            <hr class="bg-dark">
+        </div>
+    </div>
+
+
+    <div class="d-flex align-self-xl-center">
+        <div class="d-flex flex-column mt-5 ml-5">
+            <h5>Browse by</h5>
+            <hr class="text-dark">
+            <a href="../../../products.html" class="text-dark bg-transparent mb-2">
+                All Products
+            </a>
+            <a href="fieldGates.html" class="text-info bg-transparent mb-2">
+                Field Gates
+            </a>
+            <a href="popular.html" class="text-dark bg-transparent mb-2">
+                Popular
+            </a>
+            <a href="sheepFeeding.html" class="text-dark bg-transparent mb-2">
+                Sheep Feeding
+            </a>
+            <a href="sheepHandling.html" class="text-dark bg-transparent mb-2">
+                Sheep Handling
+            </a>
+            <a href="sheepHurdles.html" class="text-dark bg-transparent mb-2">
+                Sheep Hurdles
+            </a>
+        </div>
+
+
         <div class="container">
-            <div class="lista-container">
-                <ul>
-                    <h3>Browse by </h3>
-                    <div class="linha"></div>
-                    <a href="../../../products.html"><li>All Products</li></a>
-                    <li>Field Gates</li>
-                    <a href="../productsPage/popular.html"><li>Popular</li></a>
-                    <a href="../productsPage/sheepFeeding.html"><li>Sheep Feeding</li></a>
-                    <a href="../productsPage/sheepHandling.html"><li>Sheep Handling</li></a>
-                    <a href="../productsPage/sheepHurdles.html"><li>Sheep Hurdles</li></a>
-                </ul>
+            <img src="../../imagens/imagensProdutos/fieldGates.webp" class="mt-5" style="height: 302px;">
+            <h3 class="mt-5">Field Gates</h3>
+            <p class="mb-5">Many field gates products</p>
+
+            <div class="row" id="product-container-FieldGates">
+                <!-- Os cartões de produto dinâmicos serão inseridos aqui -->
             </div>
-            <div class="card-container bg-danger">
-                <img src="../../imagens/imagensProdutos/fieldGates.webp">
-                <div class="resumo">
-                    <h3>Field Gates</h3>
-                    <p>Many field gates products</p>
-                </div>
-                <a href="../productsCardPage/CorrugatedCrashUsedBarriers.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/12-CorrugatedCrashUsedBarriers.webp">
-                    <h3>Corrugated Crash Used Barriers</h3>
-                </div></a>
 
-                <a href="../productsCardPage/Coupliers.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/13-Coupliers.webp">
-                    <h3>Coupliers</h3>
-                </div></a>
-
-                <a href="../productsCardPage/CrowdPedestrianBarriers.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/14-CrowdPedestrianBarriers.webp">
-                    <h3>Crowd/Pedestrian Barriers</h3>
-                </div></a>
-
-                <a href="../productsCardPage/GateHangers.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/20-GateHangers.webp">
-                    <h3>Gate Hangers</h3>
-                </div></a>
-
-                <a href="../productsCardPage/HangingPost.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/22-HangingPost.webp">
-                    <h3>Hanging Post</h3>
-                </div></a>
-
-                <a href="../productsCardPage/HotDippedGalvanizedTrestles.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/24-HotDippedGalvanizedTrestles.webp">
-                    <h3>Hot Dipped Galvanized Trestles</h3>
-                </div></a>
-
-                <a href="../productsCardPage/RubberBlocks.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/30-RubberBlocks.webp">
-                    <h3>Rubber Blocks</h3>
-                </div></a>
-
-                <a href="../productsCardPage/Scaffolding.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/31-Scaffolding.webp">
-                    <h3>Scaffolding</h3>
-                </div></a>
-
-                <a href="../productsCardPage/TemporaryFences.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/34-TemporaryFences.webp">
-                    <h3>Temporary Fences</h3>
-                </div></a>
-
-                <a href="../productsCardPage/VMeshFencing.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/37-VMeshFencing.webp">
-                    <h3>V Mesh Fencing</h3>
-                </div></a>
-
-                <a href="../productsCardPage/VMeshPedestrianDoors.html"><div class="card">
-                    <img src="../../imagens/imagensProdutos/38-VMeshPedestrianDoors.webp">
-                    <h3>V Mesh Pedestrian Doors</h3>
-                </div></a>
-
-            </div>
+            <ul class="pagination d-flex justify-content-center mr-5">
+                <li class="page-item">
+                    <a class="page-link bg-transparent" href="#" aria-label="Anterior">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link bg-transparent" href="#">1</a></li>
+                <li class="page-item"><a class="page-link bg-transparent" href="#">2</a></li>
+                <li class="page-item">
+                    <a class="page-link bg-transparent" href="#" aria-label="Próximo">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <footer></footer>
+    </div>
+    <footer></footer>
 
-        <!-- JavaScript para carregar o header e o footer -->
-        <script src="../../scripts/Header&FooterProducts.js">
+    <!-- JavaScript para carregar o header e o footer -->
+    <script src="../../scripts/Header&FooterProducts.js"></script>
 
-
-        </script>
-</body>
-
-</html>
+    <script src="../../scripts/products.js"></script>

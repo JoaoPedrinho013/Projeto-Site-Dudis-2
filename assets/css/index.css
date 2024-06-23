@@ -17,6 +17,7 @@ body {
 
 main {
     flex: 1;
+    padding-top: 10rem;
 
 }
 
@@ -28,15 +29,54 @@ html {
 
 
 .parallax {
-  
     background-image: url("../../assets/imagens/imagensProdutos/sheepHandling.webp");
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: black;
-    width: 100%;
+    background-size: 175%;
     height: 386px;
-  }
- 
+    margin-right: 6rem;
+    margin-left: 6rem;
+    overflow: hidden;
+}
+.parallax2 {
+    background-image: url("../../assets/imagens/imagensProdutos/sheepFeeding.webp");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 175%;
+    height: 386px;
+    margin-right: 6rem;
+    margin-left: 6rem;
+    overflow: hidden;
+}
+.parallax3 {
+    background-image: url("../../assets/imagens/imagensProdutos/sheepHurdles.webp");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 175%;
+    height: 386px;
+    margin-right: 6rem;
+    margin-left: 6rem;
+    overflow: hidden;
+}
+.parallax4 {
+    background-image: url("../../assets/imagens/imagensProdutos/fieldGates.webp");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 175%;
+    height: 386px;
+    margin-right: 6rem;
+    margin-left: 6rem;
+    overflow: hidden;
+}
+
+.custom-weight-text {
+    font-weight: 1000;
+}
+
 .custom-link {
     text-decoration: none;
     font: 0.9em 'Roboto', sans-serif;
@@ -45,4 +85,19 @@ html {
 .custom-link:hover {
     text-decoration: none;
     color: rgb(84, 84, 84);
+}
+
+.cards_index {
+    margin-right: 8rem;
+    margin-left: 8rem;
+}
+
+.animar {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.features {
+    margin-bottom: 13rem;
 }

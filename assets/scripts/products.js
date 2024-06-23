@@ -309,14 +309,7 @@ const productPage = [
     },
 ]
 
-<img src="../../imagens/imagensProdutosPage/10ftCalfHurdles.webp">
-            <ul class="informations">
-                <h3>10ft Calf Hurdles</h3>
-                <li>7 bar hurdles; Heavy box ends</li>
-                <li>Double braced back and front to add maximum strength</li>
-                <li>12mm lugs and 16mm pins to add maximum strength</li>
-                <li>Also suitable for sheep</li>
-            </ul>
+
 
         
             

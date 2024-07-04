@@ -237,35 +237,35 @@ const products = [
 ];
 
 function createProductCard(product) {
-    const colDiv = document.createElement('div');
-    colDiv.classList.add('col-md-4');
+    const colDiv = document.createElement('div')
+    colDiv.classList.add('col-md-4')
 
-    const link = document.createElement('a');
+    const link = document.createElement('a')
     link.href = product.href;
-    link.classList.add('custom-link');
+    link.classList.add('custom-link')
 
-    const cardDiv = document.createElement('div');
-    cardDiv.classList.add('card', 'bg-transparent', 'border-0');
+    const cardDiv = document.createElement('div')
+    cardDiv.classList.add('card', 'bg-transparent', 'border-0')
 
-    const img = document.createElement('img');
-    img.classList.add('card-img-top');
-    img.src = product.imgSrc;
-    img.alt = product.title;
+    const img = document.createElement('img')
+    img.classList.add('card-img-top')
+    img.src = product.imgSrc
+    img.alt = product.title
 
-    const cardBody = document.createElement('div');
-    cardBody.classList.add('card-body');
+    const cardBody = document.createElement('div')
+    cardBody.classList.add('card-body')
 
-    const cardTitle = document.createElement('p');
-    cardTitle.classList.add('card-title', 'd-flex', 'justify-content-center');
-    cardTitle.textContent = product.title;
+    const cardTitle = document.createElement('p')
+    cardTitle.classList.add('card-title', 'd-flex', 'justify-content-center')
+    cardTitle.textContent = product.title
 
-    cardBody.appendChild(cardTitle);
-    cardDiv.appendChild(img);
-    cardDiv.appendChild(cardBody);
-    link.appendChild(cardDiv);
-    colDiv.appendChild(link);
+    cardBody.appendChild(cardTitle)
+    cardDiv.appendChild(img)
+    cardDiv.appendChild(cardBody)
+    link.appendChild(cardDiv)
+    colDiv.appendChild(link)
 
-    return colDiv;
+    return colDiv
 }
 
 function loadProducts() {
@@ -283,25 +283,86 @@ function loadProducts() {
         if (product.pages) {
             product.pages.forEach(page => {
                 if (productContainers[page]) {
-                    const productCard = createProductCard(product);
-                    productContainers[page].appendChild(productCard);
+                    const productCard = createProductCard(product)                          
+                    productContainers[page].appendChild(productCard)
                 }
             });
         }
     });
 }
 
-document.addEventListener('DOMContentLoaded', loadProducts);
+document.addEventListener('DOMContentLoaded', loadProducts)
 
-const productPage = [
+
+
+
+
+/*
+// Dados dos produtos
+const ProductsPage = [
     {
-
-        imgSrc: "../../../../assets/imagens/imagensProdutosPage/10ftCalfHurdles.webp",
-        title: "Med Bucket Holders"
-
+        imagem: "../../imagens/imagensProdutosPage/10ftCalfHurdles.webp",
+        titulo: "10ft Calf Hurdles",
+        caracteristicas: [
+            "7 bar hurdles; Heavy box ends",
+            "Double braced back and front to add maximum strength",
+            "12mm lugs and 16mm pins to add maximum strength",
+            "Also suitable for sheep"
+        ]
     },
-]
+    {
+        imagem: "../../imagens/imagensProdutosPage/10ftCattleHurdles.webp",
+        titulo: "10ft Cattle Hurdles",
+        caracteristicas: [
+            "20 head space cattle round feeders",
+            "Come with galvanised sheeting on the bottom",
+            "Our feeders come in 4 pieces to give maximum strength",
+            "Also suitable for sheep"
+        ]
+    }
+];
 
+// Função para renderizar os produtos em uma lista
+function renderizarProdutos(produtos, containerSelector) {
+    const container = document.querySelector(containerSelector);
+    const ul = document.createElement('ul');
+    ul.classList.add('list-unstyled');
 
+    produtos.forEach(produto => {
+        const li = document.createElement('li');
+        li.classList.add('mb-5');
+
+        const img = document.createElement('img');
+        img.classList.add('img-fluid');
+        img.src = produto.imagem;
+        img.alt = 'Imagem do Produto';
+
+        const titulo = document.createElement('h3');
+        titulo.classList.add('text-center', 'mb-4');
+        titulo.textContent = produto.titulo;
+
+        const caracteristicas = document.createElement('ul');
+        caracteristicas.classList.add('list-unstyled');
+        caracteristicas.style.listStyleType = 'circle';
+
+        produto.caracteristicas.forEach(caracteristica => {
+            const liCaracteristica = document.createElement('li');
+            liCaracteristica.textContent = caracteristica;
+            caracteristicas.appendChild(liCaracteristica);
+        });
+
+        li.appendChild(img);
+        li.appendChild(titulo);
+        li.appendChild(caracteristicas);
+
+        ul.appendChild(li);
+    });
+
+    container.appendChild(ul);
+}
+
+// Chama a função para renderizar os produtos na página específica
+renderizarProdutos(ProductsPage, '.container-10ftCalfHurdles'); // Renderiza os produtos na div de 10ft Calf Hurdles
+renderizarProdutos(ProductsPage, '.container-10ftCattleHurdles'); // Renderiza os produtos na div de 10ft Cattle Hurdles*/
 
 

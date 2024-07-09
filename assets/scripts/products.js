@@ -237,35 +237,35 @@ const products = [
 ];
 
 function createProductCard(product) {
-    const colDiv = document.createElement('div')
-    colDiv.classList.add('col-md-4')
+    const colDiv = document.createElement('div');
+    colDiv.classList.add('col-md-4', 'custom-col'); // Adiciona a classe personalizada
 
-    const link = document.createElement('a')
+    const link = document.createElement('a');
     link.href = product.href;
-    link.classList.add('custom-link')
+    link.classList.add('custom-link');
 
-    const cardDiv = document.createElement('div')
-    cardDiv.classList.add('card', 'bg-transparent', 'border-0')
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card', 'bg-transparent', 'border-0', 'custom-card'); // Adiciona a classe personalizada
 
-    const img = document.createElement('img')
-    img.classList.add('card-img-top')
-    img.src = product.imgSrc
-    img.alt = product.title
+    const img = document.createElement('img');
+    img.classList.add('card-img-top');
+    img.src = product.imgSrc;
+    img.alt = product.title;
 
-    const cardBody = document.createElement('div')
-    cardBody.classList.add('card-body')
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
 
-    const cardTitle = document.createElement('p')
-    cardTitle.classList.add('card-title', 'd-flex', 'justify-content-center')
-    cardTitle.textContent = product.title
+    const cardTitle = document.createElement('p');
+    cardTitle.classList.add('card-title', 'd-flex', 'justify-content-center');
+    cardTitle.textContent = product.title;
 
-    cardBody.appendChild(cardTitle)
-    cardDiv.appendChild(img)
-    cardDiv.appendChild(cardBody)
-    link.appendChild(cardDiv)
-    colDiv.appendChild(link)
+    cardBody.appendChild(cardTitle);
+    cardDiv.appendChild(img);
+    cardDiv.appendChild(cardBody);
+    link.appendChild(cardDiv);
+    colDiv.appendChild(link);
 
-    return colDiv
+    return colDiv;
 }
 
 function loadProducts() {
@@ -292,6 +292,19 @@ function loadProducts() {
 }
 
 document.addEventListener('DOMContentLoaded', loadProducts)
+
+
+
+
+document.getElementById('button1').addEventListener('click', function() {
+    document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/CorrugatedCrashUsedBarriers.webp';
+});
+
+document.getElementById('button2').addEventListener('click', function() {
+    document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/CorrugatedCrashUsedBarriers2.webp';
+});
+
+
 
 
 

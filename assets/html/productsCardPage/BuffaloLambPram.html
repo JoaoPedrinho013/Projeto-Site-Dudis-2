@@ -24,19 +24,15 @@
     <link rel="stylesheet" href="../../../assets/css/index.css">
     <link rel="stylesheet" href="../../../assets/css/header.css">
     <link rel="stylesheet" href="../../../assets/css/footer.css">
-    <style>
-        header hr {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../../../assets/css/products.css">
 </head>
 
 <body>
     <header class="cabecalho"></header>
     <main>
-        <div class="d-flex justify-content-center align-items-start mb-5" style="min-height: 100vh;">
+        <div class="d-flex justify-content-center align-items-start mb-5">
             <div class="d-flex flex-column justify-content-center" style="width: 68rem;">
-                <div class="d-flex justify-content-end mt-5 mb-4" style="font-size: 15px;">
+                <div class="mt-5 mb-4" style="font-size: 15px;">
                     <!-- Paginação -->
                     <ul class="pagination">
                         <li class="page-item"><a class="page-link bg-transparent text-dark custom-font"
@@ -53,8 +49,8 @@
                                     aria-hidden="true">&raquo;</span></a></li>
                     </ul>
                 </div>
-                <img src="../../imagens/imagensProdutosPage/BuffaloLambPram.webp" class="img-fluid">
-                <ul class="d-flex flex-column align-self-center mt-5 text-secondary" style="list-style-type: circle;">
+                <img id="imageProducts" class="imageProducts" src="../../imagens/imagensProdutosPage/BuffaloLambPram.webp">
+                <ul class="textoSobre d-flex flex-column align-self-center mt-5 text-secondary" style="list-style-type: circle;">
                     <h3 class="d-flex flex-column align-items-center text-dark">Buffalo Lamb Pram</h3>
                     <p>Take the back aching work out of livestock handling! Leaving your <br>
                         hands and arms free for everything else! Where ever the lamb <br>
@@ -71,7 +67,7 @@
                     </div>
                 </ul>
 
-                <div class="btn-group d-flex justify-content-center mt-5" role="group"
+                <div class="btn-group d-flex justify-content-center" role="group"
                     aria-label="Basic mixed styles example">
                     <a href="https://api.whatsapp.com/send?phone=SEUNUMERODETELEFONE" class="btn bg-transparent"
                         style="color: #25D366;">

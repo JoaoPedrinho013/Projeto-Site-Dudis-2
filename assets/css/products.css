@@ -1,0 +1,51 @@
+
+header hr {
+    display: none;
+}
+
+.image-button {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    
+}
+
+#button1 {
+    background-image: url('../imagens/imagensProdutosPage/CorrugatedCrashUsedBarriers.webp');
+}
+
+#button2 {
+    background-image: url('../imagens/imagensProdutosPage/CorrugatedCrashUsedBarriers2.webp');
+}
+
+.imageProducts {
+    width: 45rem;
+    display: flex;
+    align-self: center;
+}
+
+.textoSobre h3{
+    font-size: 1.8rem;
+}
+
+.textoSobre p,li{
+    font-size: 0.8rem;
+}
+
+
+.pagination {
+    width: 57rem;
+    display: flex;
+    justify-content: end;
+    font-size: 0.8rem;
+    padding: 0;
+}
+.pagination .page-item {
+    margin: 0 0px; /* Ajuste a margem para diminuir o espaço entre os itens */
+}
+.pagination .page-link {
+    padding: 0px 4px; /* Ajuste o preenchimento conforme necessário */
+}

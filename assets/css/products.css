@@ -21,18 +21,65 @@ header hr {
     background-image: url('../imagens/imagensProdutosPage/CorrugatedCrashUsedBarriers2.webp');
 }
 
+
+
+#button3 {
+    background-image: url('../imagens/imagensProdutosPage/GalvanizedPins.webp');
+}
+
+#button4 {
+    background-image: url('../imagens/imagensProdutosPage/GalvanizedPins2.webp');
+}
+
+
+
+#button5 {
+    background-image: url('../imagens/imagensProdutosPage/GateHangers.webp');
+}
+#button6 {
+    background-image: url('../imagens/imagensProdutosPage/GateHangers2.webp');
+}
+#button7 {
+    background-image: url('../imagens/imagensProdutosPage/GateHangers3.webp');
+}
+#button8 {
+    background-image: url('../imagens/imagensProdutosPage/GateHangers4.webp');
+}
+#button9 {
+    background-image: url('../imagens/imagensProdutosPage/GateHangers5.webp');
+}
+#button10 {
+    background-image: url('../imagens/imagensProdutosPage/GateHangers6.webp');
+}
+
+
+
+#button11 {
+    background-image: url('../imagens/imagensProdutosPage/HangOnRacksSolidBars.webp');
+}
+#button12 {
+    background-image: url('../imagens/imagensProdutosPage/HangOnRacksSolidBars2.webp');
+}
+#button13 {
+    background-image: url('../imagens/imagensProdutosPage/HangOnRacksSolidBars3.webp');
+}
+#button14 {
+    background-image: url('../imagens/imagensProdutosPage/HangOnRacksSolidBars4.webp');
+}
+
+
 .imageProducts {
-    width: 45rem;
+    width: 68rem;
     display: flex;
     align-self: center;
 }
 
 .textoSobre h3{
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .textoSobre p,li{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 

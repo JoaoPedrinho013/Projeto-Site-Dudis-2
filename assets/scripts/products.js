@@ -283,7 +283,7 @@ function loadProducts() {
         if (product.pages) {
             product.pages.forEach(page => {
                 if (productContainers[page]) {
-                    const productCard = createProductCard(product)                          
+                    const productCard = createProductCard(product)
                     productContainers[page].appendChild(productCard)
                 }
             });
@@ -296,86 +296,98 @@ document.addEventListener('DOMContentLoaded', loadProducts)
 
 
 
-document.getElementById('button1').addEventListener('click', function() {
-    document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/CorrugatedCrashUsedBarriers.webp';
-});
 
-document.getElementById('button2').addEventListener('click', function() {
-    document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/CorrugatedCrashUsedBarriers2.webp';
-});
+function addButtonListeners() {
+    var button1 = document.getElementById('button1')
+    var button2 = document.getElementById('button2')
 
+    var button3 = document.getElementById('button3')
+    var button4 = document.getElementById('button4')
 
+    var button5 = document.getElementById('button5')
+    var button6 = document.getElementById('button6')
+    var button7 = document.getElementById('button7')
+    var button8 = document.getElementById('button8')
+    var button9 = document.getElementById('button9')
+    var button10 = document.getElementById('button10')
 
-
-
-
-
-/*
-// Dados dos produtos
-const ProductsPage = [
-    {
-        imagem: "../../imagens/imagensProdutosPage/10ftCalfHurdles.webp",
-        titulo: "10ft Calf Hurdles",
-        caracteristicas: [
-            "7 bar hurdles; Heavy box ends",
-            "Double braced back and front to add maximum strength",
-            "12mm lugs and 16mm pins to add maximum strength",
-            "Also suitable for sheep"
-        ]
-    },
-    {
-        imagem: "../../imagens/imagensProdutosPage/10ftCattleHurdles.webp",
-        titulo: "10ft Cattle Hurdles",
-        caracteristicas: [
-            "20 head space cattle round feeders",
-            "Come with galvanised sheeting on the bottom",
-            "Our feeders come in 4 pieces to give maximum strength",
-            "Also suitable for sheep"
-        ]
+    if (button1) {
+        button1.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/CorrugatedCrashUsedBarriers.webp'
+        })
     }
-];
+    if (button2) {
+        button2.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/CorrugatedCrashUsedBarriers2.webp'
+        })
+    }
 
-// Função para renderizar os produtos em uma lista
-function renderizarProdutos(produtos, containerSelector) {
-    const container = document.querySelector(containerSelector);
-    const ul = document.createElement('ul');
-    ul.classList.add('list-unstyled');
 
-    produtos.forEach(produto => {
-        const li = document.createElement('li');
-        li.classList.add('mb-5');
 
-        const img = document.createElement('img');
-        img.classList.add('img-fluid');
-        img.src = produto.imagem;
-        img.alt = 'Imagem do Produto';
+    if (button3) {
+        button3.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/GalvanizedPins.webp'
+        })
+    }
+    if (button4) {
+        button4.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/GalvanizedPins2.webp'
+        })
+    }
 
-        const titulo = document.createElement('h3');
-        titulo.classList.add('text-center', 'mb-4');
-        titulo.textContent = produto.titulo;
 
-        const caracteristicas = document.createElement('ul');
-        caracteristicas.classList.add('list-unstyled');
-        caracteristicas.style.listStyleType = 'circle';
 
-        produto.caracteristicas.forEach(caracteristica => {
-            const liCaracteristica = document.createElement('li');
-            liCaracteristica.textContent = caracteristica;
-            caracteristicas.appendChild(liCaracteristica);
-        });
+    if (button5) {
+        button5.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/GateHangers.webp'
+        })
+    }
+    if (button6) {
+        button6.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/GateHangers2.webp'
+        })
+    }
+    if (button7) {
+        button7.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/GateHangers3.webp'
+        })
+    }
+    if (button8) {
+        button8.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/GateHangers4.webp'
+        })
+    }
+    if (button9) {
+        button9.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/GateHangers5.webp'
+        })
+    }
+    if (button10) {
+        button10.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/GateHangers6.webp'
+        })
+    }
 
-        li.appendChild(img);
-        li.appendChild(titulo);
-        li.appendChild(caracteristicas);
-
-        ul.appendChild(li);
-    });
-
-    container.appendChild(ul);
+    if (button11) {
+        button11.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/HangOnRacksSolidBars.webp'
+        })
+    }
+    if (button12) {
+        button12.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/HangOnRacksSolidBars2.webp'
+        })
+    }
+    if (button13) {
+        button13.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/HangOnRacksSolidBars3.webp'
+        })
+    }
+    if (button14) {
+        button14.addEventListener('click', function () {
+            document.getElementById('imageProducts').src = '../../imagens/imagensProdutosPage/HangOnRacksSolidBars4.webp'
+        })
+    }
 }
 
-// Chama a função para renderizar os produtos na página específica
-renderizarProdutos(ProductsPage, '.container-10ftCalfHurdles'); // Renderiza os produtos na div de 10ft Calf Hurdles
-renderizarProdutos(ProductsPage, '.container-10ftCattleHurdles'); // Renderiza os produtos na div de 10ft Cattle Hurdles*/
-
-
+document.addEventListener('DOMContentLoaded', addButtonListeners);
